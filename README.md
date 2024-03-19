@@ -12,7 +12,7 @@ TECHNOLOGY: React App , AWS, ANSIBLE , JENKINS , DOCKER , SONARQUBE , TRIVY , PR
    -  Install Ansible  look on ansible.sh
    -  Make inventory of hosts  example inventory.yml
    -  Copy key for instance change permission chmod 600 keys
-** Step 2 Install Tools on Jenkins Host by ansible jenkins.yml "
+** Step 2 Install Tools on Jenkins Host by ansible jenkins.yml**
  -  go to ANSIBLE dir
  -   ansible-playbook -i inventory.yml jenkins.yml
  -   
