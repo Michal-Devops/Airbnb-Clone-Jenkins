@@ -21,7 +21,7 @@ TECHNOLOGY: React App , AWS, ANSIBLE , JENKINS , DOCKER , SONARQUBE , TRIVY , PR
  **Step 3  Install Prometheus and Grafana by Ansible**
    - ansible-playbook -i inventory monitoring.yml
 
- ** Step 4 Install Database by Ansible**
+ **Step 4 Install Database by Ansible**
   - ansible-playbook -i inventory database.yml
 
 ### **PHASE 2  Configuration Jenkins**
