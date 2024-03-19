@@ -15,5 +15,5 @@ TECHNOLOGY: React App , AWS, ANSIBLE , JENKINS , DOCKER , SONARQUBE , TRIVY , PR
 ** Step 2 Install Tools on Jenkins Host by ansible jenkins.yml**
  -  go to ANSIBLE dir
  -   ansible-playbook -i inventory.yml jenkins.yml
- ** Step 2 Install Prometheus and Grafana by Ansible
+ ** Step 2 Install Prometheus and Grafana by Ansible**
    - ansible-playbook -i inventory monitoring.yml  
