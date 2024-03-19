@@ -18,10 +18,6 @@ RUN npm install
 COPY public/ public/
 COPY src/ src/
 
-# Skopiuj pozostałe pliki i katalogi, jeśli są niezbędne
-# Na przykład, jeśli korzystasz z Firebase:
-COPY firebase/ firebase/
-
 # Zbuduj aplikację dla produkcji
 RUN npm run build
 
@@ -29,7 +25,7 @@ RUN npm run build
 RUN npm install -g serve
 
 # Uruchom serwer HTTP, serwując zawartość z folderu build
-CMD ["serve", "-s", "build", "-l", "5000"]
+CMD ["serve", "-s", "build", "-l", "80"]
 
-# Informuj Docker, że kontener nasłuchuje na porcie 5000
+# Informuj Docker, że kontener nasłuchuje na porcie 80
 EXPOSE 80
