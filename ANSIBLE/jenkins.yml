@@ -12,7 +12,7 @@
     - name: Install Docker Python module
       pip:
         name: docker
-     
+
     - name: Install Docker
       apt:
         update_cache: yes
@@ -36,7 +36,7 @@
         image: sonarqube:lts-community
         state: started
         published_ports:
-          - 9000:9000
+          - "9000:9000"
         restart_policy: always
 
     - name: Install dependencies for Trivy
@@ -66,22 +66,23 @@
         state: present
 
     - name: Add Jenkins repository key
-      ansible.builtin.apt_key:
+      apt_key:
         url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
         state: present
 
     - name: Add Jenkins repository
-      ansible.builtin.apt_repository:
+      apt_repository:
         repo: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
         state: present
 
-    - name : Install Jenkins
+    - name: Install Jenkins
       apt:
-       update_cache: yes
-       name: jenkins
-       state: present
-   - name: Ensure Jenkins is started and enabled
-     systemd:
-     name: jenkins
-     state: started
-     enabled: yes
+        update_cache: yes
+        name: jenkins
+        state: present
+
+    - name: Ensure Jenkins is started and enabled
+      systemd:
+        name: jenkins
+        state: started
+        enabled: yes
