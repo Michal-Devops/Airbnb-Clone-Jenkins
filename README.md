@@ -8,4 +8,5 @@ TECHNOLOGY: React App , AWS, ANSIBLE , JENKINS , DOCKER , SONARQUBE , TRIVY , PR
 
 -  Provision an EC2 instance on AWS with Ubuntu 22.04.
 -  -  Connect to the instance using SSH.
-   -  Install Ansible 
+   -  Install Ansible  look on ansible.sh
+   -  Make inventory of hosts  example inventory.yml 
