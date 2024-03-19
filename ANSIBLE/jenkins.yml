@@ -71,8 +71,8 @@
         state: present
 
     - name: Add Jenkins repository
-      ansible.builtin.apt_key:
-        url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+      apt_repository:
+        repo: deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/
         state: present
 
     - name: Install Jenkins
