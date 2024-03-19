@@ -5,11 +5,10 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Kopiuj pliki konfiguracyjne projektu
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
-# Zainstaluj zależności projektu wraz z brakującym pakietem
+# Zainstaluj zależności projektu
 RUN npm install
-RUN npm install @material-ui/core
 
 # Kopiuj pozostałe pliki źródłowe projektu
 COPY . .
@@ -18,6 +17,7 @@ COPY . .
 RUN npm run build
 
 # Zainstaluj serwer HTTP globalnie w kontenerze
+# Opcjonalnie, zamiast instalować serve globalnie, możesz użyć npx
 RUN npm install -g serve
 
 # Uruchom serwer HTTP, serwując zawartość z folderu build na porcie 80
